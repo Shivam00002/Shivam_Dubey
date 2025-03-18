@@ -97,7 +97,7 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div className="relative mb-10 md:mb-16" variants={titleVariants}>
           <h2
-            className={`text-3xl md:text-4xl font-bold text-center ${
+            className={`text-2xl md:text-4xl font-bold text-center ${
               darkMode ? "text-white" : "text-gray-800"
             }`}
           >

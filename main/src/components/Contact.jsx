@@ -138,7 +138,7 @@ const Contact = () => {
           variants={titleVariants}
         >
           <motion.h2
-            className={`text-3xl md:text-4xl font-bold text-center ${
+            className={`text-2xl md:text-4xl font-bold text-center ${
               darkMode ? "text-white" : "text-gray-800"
             }`}
             initial={{ opacity: 0, y: -20 }}
@@ -281,7 +281,7 @@ const Contact = () => {
                     darkMode ? "bg-indigo-600" : "bg-indigo-600"
                   } transition-colors duration-300 flex items-center justify-center`}
                 >
-                  <span>Send Message</span>
+                  <span className="text-sm">Send Message</span>
                   <motion.svg
                     className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
                     fill="none"

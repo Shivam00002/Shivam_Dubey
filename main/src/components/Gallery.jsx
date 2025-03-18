@@ -173,7 +173,7 @@ const Gallery = () => {
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <h2
-            className={`text-3xl sm:text-4xl font-bold text-center ${
+            className={`text-2xl sm:text-4xl font-bold text-center ${
               darkMode ? "text-white" : "text-gray-800"
             }`}
           >

@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-10 shadow-md ${
+      className={`sticky top-0 z-50 shadow-md ${
         darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
       }`}
     >

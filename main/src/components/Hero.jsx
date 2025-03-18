@@ -248,7 +248,7 @@ const Hero = () => {
           variants={contentVariants}
         >
           <motion.div variants={textVariants} className="overflow-hidden">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 inline-flex flex-wrap">
+            <h2 className="text-[27px] sm:text-4xl md:text-5xl font-bold mb-4 inline-flex flex-wrap">
               {/* Animated Text with letter staggering */}
               {"Hello, I'm ".split("").map((char, index) => (
                 <motion.span
@@ -274,7 +274,7 @@ const Hero = () => {
 
           <motion.p
             variants={contentVariants}
-            className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 leading-relaxed text-indigo-100"
+            className="text-md sm:text-xl md:text-2xl mb-6 sm:mb-8 leading-relaxed text-indigo-100"
           >
             A passionate Software Engineer <br className="hidden sm:block" />{" "}
             specialized in Full Stack Development
@@ -285,13 +285,13 @@ const Hero = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="bg-white text-indigo-600 font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-lg text-sm sm:text-base"
+              className="bg-white text-indigo-600 font-semibold py-2 sm:py-3 px-4 text-center  rounded-full shadow-lg text-sm sm:text-base"
               onClick={scrollToContact}
             >
-              <span className="flex items-center">
+              <span className="flex text-sm ">
                 Contact Me
                 <motion.svg
-                  className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
+                  className="w-fit h-4 sm:w-5 sm:h-5 ml-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -302,24 +302,19 @@ const Hero = () => {
                     duration: 1.5,
                   }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                  ></path>
+               
                 </motion.svg>
               </span>
             </motion.button>
 
-            <motion.button
+            {/* <motion.button
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
               className="bg-transparent border-2 border-white text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full text-sm sm:text-base"
             >
               Portfolio
-            </motion.button>
+            </motion.button> */}
           </motion.div>
         </motion.div>
 

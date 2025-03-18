@@ -39,7 +39,6 @@ const Gallery = () => {
     },
   ];
 
-  // Container animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -51,9 +50,7 @@ const Gallery = () => {
     },
   };
 
-  // Different entrance animations for different positions
   const getItemVariants = (index) => {
-    // Left column (0, 3)
     if (index % 3 === 0) {
       return {
         hidden: { x: -50, y: 50, opacity: 0 },
@@ -68,9 +65,7 @@ const Gallery = () => {
           },
         },
       };
-    }
-    // Center column (1, 4)
-    else if (index % 3 === 1) {
+    } else if (index % 3 === 1) {
       return {
         hidden: { y: 70, opacity: 0 },
         visible: {
@@ -83,9 +78,7 @@ const Gallery = () => {
           },
         },
       };
-    }
-    // Right column (2, 5)
-    else {
+    } else {
       return {
         hidden: { x: 50, y: 50, opacity: 0 },
         visible: {
@@ -102,7 +95,6 @@ const Gallery = () => {
     }
   };
 
-  // Image hover effect
   const imageHover = {
     rest: {
       scale: 1,
@@ -123,7 +115,6 @@ const Gallery = () => {
     },
   };
 
-  // Modal animations
   const overlayVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -163,7 +154,7 @@ const Gallery = () => {
 
   return (
     <motion.section
-      className={`py-16 ${
+      className={`py-12 sm:py-16 ${
         darkMode
           ? "bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800"
           : "bg-gradient-to-br from-indigo-50 via-white to-purple-50"
@@ -173,16 +164,16 @@ const Gallery = () => {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.7 }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
-          className="relative mb-16"
+          className="relative mb-10 sm:mb-16"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           <h2
-            className={`text-4xl font-bold text-center ${
+            className={`text-3xl sm:text-4xl font-bold text-center ${
               darkMode ? "text-white" : "text-gray-800"
             }`}
           >
@@ -207,16 +198,19 @@ const Gallery = () => {
             </motion.span>
           </h2>
           <motion.div
-            className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"
+            className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"
             initial={{ width: 0 }}
-            whileInView={{ width: "6rem" }}
+            whileInView={{
+              width: "4rem",
+              "@media (min-width: 640px)": { width: "6rem" },
+            }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           ></motion.div>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -236,14 +230,14 @@ const Gallery = () => {
             >
               <motion.div className="relative group" variants={imageHover}>
                 <motion.div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                  <p className="text-white font-medium text-center">
+                  <p className="text-white font-medium text-center text-sm sm:text-base">
                     {image.alt}
                   </p>
                 </motion.div>
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </motion.div>
             </motion.div>
@@ -268,10 +262,10 @@ const Gallery = () => {
                 <img
                   src={selectedImage.src}
                   alt={selectedImage.alt}
-                  className="max-h-screen max-w-full rounded-xl shadow-2xl"
+                  className="max-h-[80vh] max-w-full rounded-xl shadow-2xl"
                 />
                 <motion.button
-                  className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm hover:bg-white rounded-full p-2 shadow-lg"
+                  className="absolute top-2 sm:top-4 right-2 sm:right-4 bg-white/80 backdrop-blur-sm hover:bg-white rounded-full p-1.5 sm:p-2 shadow-lg"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={(e) => {
@@ -280,7 +274,7 @@ const Gallery = () => {
                   }}
                 >
                   <svg
-                    className="w-6 h-6 text-black"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-black"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -296,7 +290,7 @@ const Gallery = () => {
                 </motion.button>
                 <div className="absolute bottom-4 left-0 right-0 text-center">
                   <motion.div
-                    className="inline-block bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-black shadow-lg"
+                    className="inline-block bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-black shadow-lg text-sm sm:text-base"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}

@@ -21,7 +21,6 @@ const Contact = () => {
     }),
   };
 
-  // Button animation
   const buttonVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -49,7 +48,6 @@ const Contact = () => {
     },
   };
 
-  // Card animation
   const cardVariants = {
     hidden: { opacity: 0, y: 100 },
     visible: {
@@ -65,7 +63,6 @@ const Contact = () => {
     },
   };
 
-  // Title animation
   const titleVariants = {
     hidden: { opacity: 0, y: -50 },
     visible: {
@@ -79,7 +76,6 @@ const Contact = () => {
     },
   };
 
-  // Input animation on focus
   const inputVariants = {
     rest: {
       scale: 1,
@@ -95,18 +91,17 @@ const Contact = () => {
 
   return (
     <motion.section
-      id="contact" 
-      className={`py-20 ${
+      id="contact"
+      className={`py-16 md:py-20 ${
         darkMode
           ? "bg-gradient-to-br from-gray-900 to-gray-800"
           : "bg-gradient-to-br from-indigo-50 to-gray-100"
-      }`}
+      } relative`}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       ref={formRef}
     >
-      {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <svg
           className="absolute top-0 left-0 w-full h-full"
@@ -137,10 +132,13 @@ const Contact = () => {
         </svg>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div className="mb-16 relative" variants={titleVariants}>
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <motion.div
+          className="mb-10 md:mb-16 relative"
+          variants={titleVariants}
+        >
           <motion.h2
-            className={`text-4xl font-bold text-center ${
+            className={`text-3xl md:text-4xl font-bold text-center ${
               darkMode ? "text-white" : "text-gray-800"
             }`}
             initial={{ opacity: 0, y: -20 }}
@@ -151,9 +149,12 @@ const Contact = () => {
             Contact Me
           </motion.h2>
           <motion.div
-            className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"
+            className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"
             initial={{ width: 0 }}
-            whileInView={{ width: "6rem" }}
+            whileInView={{
+              width: "4rem",
+              "@media (min-width: 640px)": { width: "6rem" },
+            }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           />
@@ -163,12 +164,11 @@ const Contact = () => {
           className={`max-w-2xl mx-auto rounded-lg shadow-xl overflow-hidden ${
             darkMode
               ? "bg-gray-800 border border-gray-700"
-              : "bg-white border border-gray-200"
+              : " border border-gray-200"
           }`}
           variants={cardVariants}
         >
-          {/* Card header with wave design */}
-          <div className="relative h-16">
+          <div className="relative h-12 sm:h-16">
             <div
               className={`absolute w-full h-full ${
                 darkMode
@@ -191,16 +191,16 @@ const Contact = () => {
               </svg>
             </div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-              <h3 className="text-xl font-semibold">Get In Touch</h3>
+              <h3 className="text-lg sm:text-xl font-semibold">Get In Touch</h3>
             </div>
           </div>
 
-          <div className="p-8">
+          <div className="p-4 sm:p-6 md:p-8">
             <form>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                 <motion.div custom={0} variants={formItemVariants}>
                   <label
-                    className={`block mb-2 font-medium ${
+                    className={`block mb-1 sm:mb-2 text-sm font-medium ${
                       darkMode ? "text-gray-300" : "text-gray-700"
                     }`}
                   >
@@ -208,7 +208,7 @@ const Contact = () => {
                   </label>
                   <motion.input
                     type="text"
-                    className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                       darkMode
                         ? "bg-gray-700 text-white border-gray-600"
                         : "bg-white text-gray-800 border-gray-300"
@@ -222,7 +222,7 @@ const Contact = () => {
                 </motion.div>
                 <motion.div custom={1} variants={formItemVariants}>
                   <label
-                    className={`block mb-2 font-medium ${
+                    className={`block mb-1 sm:mb-2 text-sm font-medium ${
                       darkMode ? "text-gray-300" : "text-gray-700"
                     }`}
                   >
@@ -230,7 +230,7 @@ const Contact = () => {
                   </label>
                   <motion.input
                     type="email"
-                    className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                       darkMode
                         ? "bg-gray-700 text-white border-gray-600"
                         : "bg-white text-gray-800 border-gray-300"
@@ -250,14 +250,14 @@ const Contact = () => {
                 variants={formItemVariants}
               >
                 <label
-                  className={`block mb-2 font-medium ${
+                  className={`block mb-1 sm:mb-2 text-sm font-medium ${
                     darkMode ? "text-gray-300" : "text-gray-700"
                   }`}
                 >
                   Message
                 </label>
                 <motion.textarea
-                  className={`w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-500 h-32 resize-none ${
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-500 h-24 sm:h-32 resize-none ${
                     darkMode
                       ? "bg-gray-700 text-white border-gray-600"
                       : "bg-white text-gray-800 border-gray-300"
@@ -277,13 +277,13 @@ const Contact = () => {
               >
                 <button
                   type="submit"
-                  className={`w-full text-white font-semibold py-3 px-6 rounded-lg shadow-md ${
+                  className={`w-full text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-md ${
                     darkMode ? "bg-indigo-600" : "bg-indigo-600"
                   } transition-colors duration-300 flex items-center justify-center`}
                 >
                   <span>Send Message</span>
                   <motion.svg
-                    className="w-5 h-5 ml-2"
+                    className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -309,9 +309,8 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* Contact info section */}
         <motion.div
-          className="mt-12 flex flex-wrap justify-center gap-6"
+          className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-3 sm:gap-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.5 }}
@@ -321,7 +320,7 @@ const Contact = () => {
             {
               icon: (
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -341,7 +340,7 @@ const Contact = () => {
             {
               icon: (
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -361,7 +360,7 @@ const Contact = () => {
             {
               icon: (
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -387,7 +386,7 @@ const Contact = () => {
           ].map((item, index) => (
             <motion.div
               key={index}
-              className={`flex items-center px-4 py-3 rounded-lg ${
+              className={`flex items-center px-3 py-2 sm:px-4 sm:py-3 rounded-lg ${
                 darkMode
                   ? "bg-gray-800/50 border border-gray-700"
                   : "bg-white/90 border border-gray-200 shadow-md"
@@ -400,7 +399,7 @@ const Contact = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <motion.div
-                className={`p-2 mr-3 rounded-full ${
+                className={`p-1.5 sm:p-2 mr-2 sm:mr-3 rounded-full ${
                   darkMode
                     ? "bg-indigo-700/30 text-indigo-300"
                     : "bg-indigo-100 text-indigo-600"
@@ -419,7 +418,7 @@ const Contact = () => {
                   {item.title}
                 </div>
                 <div
-                  className={`font-medium ${
+                  className={`text-sm sm:text-base font-medium ${
                     darkMode ? "text-white" : "text-gray-800"
                   }`}
                 >

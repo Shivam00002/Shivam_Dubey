@@ -84,7 +84,7 @@ const About = () => {
 
   return (
     <motion.section
-      className={`py-16 ${
+      className={`py-12 md:py-16 ${
         darkMode
           ? "bg-gradient-to-br from-gray-900 to-gray-800"
           : "bg-gradient-to-br from-indigo-50 to-white"
@@ -94,32 +94,32 @@ const About = () => {
       viewport={{ once: true, margin: "-100px" }}
       variants={sectionVariants}
     >
-      <div className="container mx-auto px-4">
-        <motion.div className="relative mb-16" variants={titleVariants}>
+      <div className="container mx-auto px-4 sm:px-6">
+        <motion.div className="relative mb-10 md:mb-16" variants={titleVariants}>
           <h2
-            className={`text-4xl font-bold text-center ${
+            className={`text-3xl md:text-4xl font-bold text-center ${
               darkMode ? "text-white" : "text-gray-800"
             }`}
           >
             About Me
           </h2>
           <motion.div
-            className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"
+            className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full"
             initial={{ width: 0 }}
-            whileInView={{ width: "6rem" }}
+            whileInView={{ width: "4rem", "@media (min-width: 640px)": { width: "6rem" } }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.4, delay: 0.2 }}
           ></motion.div>
         </motion.div>
 
         <div
-          className={`rounded-xl shadow-xl p-8 ${
+          className={`rounded-xl  p-4 sm:p-6 md:p-8 ${
             darkMode
               ? "bg-gray-800 border border-gray-700"
-              : "bg-white border border-gray-200"
+              : "bg- border border-gray-200"
           }`}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {/* Left Column - animates from left */}
             <motion.div
               variants={leftColumnVariants}
@@ -128,7 +128,7 @@ const About = () => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h3
-                className={`text-xl font-semibold mb-4 ${
+                className={`text-lg md:text-xl font-semibold mb-4 ${
                   darkMode ? "text-indigo-300" : "text-indigo-600"
                 }`}
                 variants={leftItemVariants}
@@ -137,7 +137,7 @@ const About = () => {
               </motion.h3>
 
               <div
-                className={`space-y-4 ${
+                className={`space-y-3 md:space-y-4 ${
                   darkMode ? "text-gray-300" : "text-gray-700"
                 }`}
               >
@@ -265,7 +265,7 @@ const About = () => {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className={`flex items-center p-3 rounded-lg border ${
+                    className={`flex items-center p-2 sm:p-3 rounded-lg border ${
                       darkMode
                         ? "border-indigo-700 bg-indigo-900/20"
                         : "border-indigo-200 bg-indigo-50/50"
@@ -274,9 +274,9 @@ const About = () => {
                     whileHover={cardHover}
                   >
                     <motion.div
-                      className={`mr-3 ${
+                      className={`mr-2 sm:mr-3 ${
                         darkMode ? "bg-indigo-800" : "bg-indigo-100"
-                      } p-2 rounded-full`}
+                      } p-1.5 sm:p-2 rounded-full`}
                       variants={iconAnimation}
                       whileHover="hover"
                     >
@@ -290,14 +290,14 @@ const About = () => {
                       >
                         {item.label}
                       </div>
-                      <div className="font-medium">{item.value}</div>
+                      <div className="font-medium text-sm sm:text-base">{item.value}</div>
                     </div>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Right Column - animates from right */}
+     
             <motion.div
               variants={rightColumnVariants}
               initial="hidden"
@@ -305,7 +305,7 @@ const About = () => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h3
-                className={`text-xl font-semibold mb-4 ${
+                className={`text-lg md:text-xl font-semibold mb-4 ${
                   darkMode ? "text-indigo-300" : "text-indigo-600"
                 }`}
                 variants={rightItemVariants}
@@ -314,7 +314,7 @@ const About = () => {
               </motion.h3>
 
               <div
-                className={`space-y-4 ${
+                className={`space-y-3 md:space-y-4 ${
                   darkMode ? "text-gray-300" : "text-gray-700"
                 }`}
               >
@@ -384,7 +384,7 @@ const About = () => {
                 ].map((item, index) => (
                   <motion.div
                     key={index}
-                    className={`flex items-center p-3 rounded-lg border ${
+                    className={`flex items-center p-2 sm:p-3 rounded-lg border ${
                       darkMode
                         ? "border-purple-700 bg-purple-900/20"
                         : "border-purple-200 bg-purple-50/50"
@@ -393,9 +393,9 @@ const About = () => {
                     whileHover={cardHover}
                   >
                     <motion.div
-                      className={`mr-3 ${
+                      className={`mr-2 sm:mr-3 ${
                         darkMode ? "bg-purple-800" : "bg-purple-100"
-                      } p-2 rounded-full`}
+                      } p-1.5 sm:p-2 rounded-full`}
                       variants={iconAnimation}
                       whileHover="hover"
                     >
@@ -409,13 +409,13 @@ const About = () => {
                       >
                         {item.label}
                       </div>
-                      <div className="font-medium">{item.value}</div>
+                      <div className="font-medium text-sm sm:text-base">{item.value}</div>
                     </div>
                   </motion.div>
                 ))}
 
                 <motion.div
-                  className={`p-3 rounded-lg border ${
+                  className={`p-2 sm:p-3 rounded-lg border ${
                     darkMode
                       ? "border-purple-700 bg-purple-900/20"
                       : "border-purple-200 bg-purple-50/50"
@@ -425,9 +425,9 @@ const About = () => {
                 >
                   <div className="flex items-center mb-2">
                     <motion.div
-                      className={`mr-3 ${
+                      className={`mr-2 sm:mr-3 ${
                         darkMode ? "bg-purple-800" : "bg-purple-100"
-                      } p-2 rounded-full`}
+                      } p-1.5 sm:p-2 rounded-full`}
                       variants={iconAnimation}
                       whileHover="hover"
                     >
@@ -454,7 +454,7 @@ const About = () => {
                       Skills
                     </div>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
                     {[
                       "HTML",
                       "CSS",
@@ -466,11 +466,11 @@ const About = () => {
                     ].map((skill, i) => (
                       <motion.span
                         key={i}
-                        className={`px-3 py-1 ${
+                        className={`px-2 sm:px-3 py-1 ${
                           darkMode
                             ? "bg-purple-800 text-purple-200"
                             : "bg-purple-100 text-purple-800"
-                        } rounded-full text-sm font-medium`}
+                        } rounded-full text-xs sm:text-sm font-medium`}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{
                           opacity: 1,

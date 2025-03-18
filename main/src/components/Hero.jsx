@@ -160,8 +160,8 @@ const Hero = () => {
   };
 
   const shapeStyles = {
-    width: "100px",
-    height: "100px",
+    width: "80px",
+    height: "80px",
     borderRadius: "50%",
     position: "absolute",
     filter: "blur(30px)",
@@ -171,13 +171,12 @@ const Hero = () => {
 
   return (
     <section
-      className={`relative py-20 overflow-hidden ${
+      className={`relative py-16 md:py-20 overflow-hidden ${
         darkMode
           ? "bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900"
           : "bg-gradient-to-br from-indigo-500 via-purple-600 to-indigo-500"
       }`}
     >
-      {/* Animated background elements */}
       <motion.div
         style={{
           ...shapeStyles,
@@ -239,17 +238,17 @@ const Hero = () => {
       />
 
       <motion.div
-        className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10"
+        className="container mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between relative z-10"
         variants={containerVariants}
         initial="hidden"
         animate={controls}
       >
         <motion.div
-          className="md:w-1/2 text-white mb-12 md:mb-0"
+          className="md:w-1/2 text-white mb-10 md:mb-0"
           variants={contentVariants}
         >
           <motion.div variants={textVariants} className="overflow-hidden">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 inline-flex flex-wrap">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 inline-flex flex-wrap">
               {/* Animated Text with letter staggering */}
               {"Hello, I'm ".split("").map((char, index) => (
                 <motion.span
@@ -275,24 +274,24 @@ const Hero = () => {
 
           <motion.p
             variants={contentVariants}
-            className="text-xl md:text-2xl mb-8 leading-relaxed text-indigo-100"
+            className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 leading-relaxed text-indigo-100"
           >
-            A passionate Software Engineer <br /> specialized in Full Stack
-            Development
+            A passionate Software Engineer <br className="hidden sm:block" />{" "}
+            specialized in Full Stack Development
           </motion.p>
 
-          <motion.div className="flex space-x-4">
+          <motion.div className="flex flex-wrap gap-4">
             <motion.button
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="bg-white text-indigo-600 font-semibold py-3 px-8 rounded-full shadow-lg"
+              className="bg-white text-indigo-600 font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-lg text-sm sm:text-base"
               onClick={scrollToContact}
             >
               <span className="flex items-center">
                 Contact Me
                 <motion.svg
-                  className="w-5 h-5 ml-2"
+                  className="w-4 h-4 sm:w-5 sm:h-5 ml-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -317,7 +316,7 @@ const Hero = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
-              className="bg-transparent border-2 border-white text-white font-semibold py-3 px-8 rounded-full"
+              className="bg-transparent border-2 border-white text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full text-sm sm:text-base"
             >
               Portfolio
             </motion.button>
@@ -330,13 +329,12 @@ const Hero = () => {
           animate={floatingAnimation}
         >
           <motion.div
-            className="w-56 h-56 md:w-72 md:h-72 relative overflow-visible mx-auto"
+            className="w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72 relative overflow-visible mx-auto"
             whileHover={{
               scale: 1.05,
               transition: { duration: 0.3 },
             }}
           >
-            {/* Animated rings around profile image */}
             <motion.div
               className="absolute inset-0 rounded-full"
               style={{
@@ -372,7 +370,6 @@ const Hero = () => {
               }}
             />
 
-            {/* Image with parallax effect */}
             <motion.div
               className="w-full h-full rounded-full overflow-hidden border-4 border-white/30 shadow-2xl"
               style={{
@@ -396,35 +393,12 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
               />
             </motion.div>
-
-            {/* Animated dots */}
-            {[...Array(5)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-4 h-4 rounded-full bg-white/80"
-                style={{
-                  top: `${20 + i * 15}%`,
-                  right: `-${10 + (i % 3) * 5}%`,
-                }}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.7, 1, 0.7],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  delay: i * 0.3,
-                  repeatType: "reverse",
-                }}
-              />
-            ))}
           </motion.div>
         </motion.div>
       </motion.div>
 
-      {/* Animated scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{
           y: [0, 10, 0],
           opacity: [0.6, 1, 0.6],
@@ -438,7 +412,7 @@ const Hero = () => {
         style={{ cursor: "pointer" }}
       >
         <svg
-          className="w-8 h-8 text-white/80"
+          className="w-6 h-6 sm:w-8 sm:h-8 text-white/80"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

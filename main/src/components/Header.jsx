@@ -11,9 +11,9 @@ const Header = () => {
         darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-800"
       }`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-3 sm:py-4 flex justify-between items-center">
         <motion.h1
-          className={`text-2xl font-bold ${
+          className={`text-xl sm:text-2xl font-bold ${
             darkMode ? "text-indigo-300" : "text-indigo-600"
           }`}
           initial={{ opacity: 0, y: -20 }}
@@ -25,14 +25,14 @@ const Header = () => {
         <div className="flex items-center">
           <button
             onClick={toggleDarkMode}
-            className="p-2 rounded-full focus:outline-none"
+            className="p-1.5 sm:p-2 rounded-full focus:outline-none"
             aria-label={
               darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"
             }
           >
             {darkMode ? (
               <svg
-                className="w-6 h-6 text-yellow-300"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ const Header = () => {
               </svg>
             ) : (
               <svg
-                className="w-6 h-6 text-gray-700"
+                className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

@@ -8,19 +8,20 @@ const Footer = () => {
     <footer
       className={`${
         !darkMode ? "bg-white text-gray-800" : "bg-gray-900 text-white "
-      }  py-8`}
+      } py-6 sm:py-8`}
     >
       <div className="container mx-auto px-4 text-center">
-        <p className="mb-2">
+        <p className="mb-2 text-sm sm:text-base">
           &copy; {new Date().getFullYear()} Shivam Dubey. All rights reserved.
         </p>
-        <div className="flex justify-center space-x-4 mt-4">
+        <div className="flex justify-center space-x-4 mt-3 sm:mt-4">
           <a
             href="#"
             className="hover:text-indigo-400 transition-colors duration-300"
+            aria-label="Instagram"
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -31,9 +32,10 @@ const Footer = () => {
           <a
             href="#"
             className="hover:text-indigo-400 transition-colors duration-300"
+            aria-label="Facebook"
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -44,9 +46,10 @@ const Footer = () => {
           <a
             href="#"
             className="hover:text-indigo-400 transition-colors duration-300"
+            aria-label="LinkedIn"
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -57,9 +60,10 @@ const Footer = () => {
           <a
             href="#"
             className="hover:text-indigo-400 transition-colors duration-300"
+            aria-label="GitHub"
           >
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5 sm:w-6 sm:h-6"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"

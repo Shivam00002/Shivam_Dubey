@@ -20,7 +20,7 @@ const Header = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Shivam Dubey
+          Shivam Dubey ⚡️
         </motion.h1>
         <div className="flex items-center">
           <button

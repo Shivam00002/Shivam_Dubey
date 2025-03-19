@@ -34,8 +34,18 @@ const Gallery = () => {
     },
     {
       id: 6,
-      src: "https://rukminim2.flixcart.com/image/850/1000/ky0g58w0/poster/1/x/i/small-suriya-actor-handsome-hero-india-rajinikanth-superstar-original-imagac5bnzgdus7v.jpeg?q=90&crop=false",
-      alt: "Image 6",
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEiUG_o30P3vtad2zReBA2LMS9bEibHW_E6urYwHNIi6EIajonRFI20Xkufub1rWsmEFZ5JkvYd9jZa-scwhi3pG8iVaUKT0d_U0_n7PkO01_QKysQIY_Ru4kanso5BKSBLacY6t41Dbk7sGzYiuAqzLMM5wiI4t-5mGEB795u2NogucvdaiGFpZt3LB7w8",
+      alt: "Madan Mahal Fort",
+    },
+    {
+      id: 7,
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEgAfKSdsRVEtgugkLcSXOxMSF6o05z-I2V4Iswsp2Q5P0t4uoIEfaDaKbD8c3lQ8EKShkphLph8Z-UCQnNfPnZjMHqhVWkRcW8H04u4RxYoTjIFKwHv0sh5Xl-MA2XTHRC5U-n3vyH3mSTDsbdqSQoEq4dY_8zEUuGeHUwmMYWWAdXtiU-JdUztPjVjzzQ",
+      alt: "🤩",
+    },
+    {
+      id: 8,
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEjxMQyV8HWDy8i2fbDfH1Zba25lqFpCz0MEhIWKUS0o6vK9TS5UCc5ZpzV1j9Mz8BlD5dWXn3xGqjqZvQxKucHsMV7vxGBcv52O3NTWd2uIrqIF0tr6jWkM9d9WYxHmoUPFQDJCtBL1f0DcsdYcqQ0YWRkRJ7kJyQhLuwtJakHx9FsCZUg48_GYcye8sf8",
+      alt: "✌🏼",
     },
   ];
 
@@ -210,7 +220,7 @@ const Gallery = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

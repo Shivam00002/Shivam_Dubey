@@ -339,7 +339,7 @@ const About = () => {
                       </svg>
                     ),
                     label: "Education",
-                    value: "Bachelor of Computer Applications (BCA)",
+                    value: "Bachelor of Computer Applications (BCA) - MCU  🎓 ",
                   },
                   {
                     icon: (
@@ -379,7 +379,7 @@ const About = () => {
                       </svg>
                     ),
                     label: "Profession",
-                    value: "Software Engineer",
+                    value: "Software Engineer & Frontend Developer 💻 ",
                   },
                 ].map((item, index) => (
                   <motion.div
@@ -456,13 +456,14 @@ const About = () => {
                   </div>
                   <div className="flex flex-wrap gap-1 sm:gap-2">
                     {[
-                      "HTML",
-                      "CSS",
-                      "JavaScript",
                       "React",
+                      "Next.js",
+                      "JavaScript",
                       "Node.js",
                       "MongoDB",
                       "Express",
+                      "Tailwind",
+                 
                     ].map((skill, i) => (
                       <motion.span
                         key={i}

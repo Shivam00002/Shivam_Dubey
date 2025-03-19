@@ -9,28 +9,28 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201905/tiger_shroff_0.png?size=690:388",
-      alt: "Image 1",
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEhiAC_-AyXcXcq--5lqHZ6BUYt7RDu4VCNRnabbcoIlW4PwWwV1yvTIcVxmwcowOq5MRjl9J9Ar3SqI6_j1BeNHkfbCeKZMXEqxD6A-OeF3S44R6ABChuu7GqTt_jnNKT9s7mySQL17r_UkIT9DCWVgUIK8Y3RD6fee5ceX2kbZ5Rqc37QYe9Z_5u3YMqg",
+      alt: "Ujjain feb 2025",
     },
     {
       id: 2,
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1XGSTRPWHHewEBulTKZ98oBcxuvBQll5tUA&s",
-      alt: "Image 2",
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEioVqwFwwqJnGM0KpgiB4iPCwt-VHI3-mv6FFhBX5QaPsdSn5fnwFUsPJVqp6fTTmOmsApKvKWaVidUjkqGYNUWHDf9qanx0hQPae-ckL6zONFh677AaLbjwG4geTLr0jvtTn3hNmFxzN49DkzcJNCbcuSUrgGaUgvu7UpaCZuTsCYndQ1yzPKvFLVdt48",
+      alt: "Bheraghat",
     },
     {
       id: 3,
-      src: "https://wallpapers.com/images/hd/bollywood-hero-varun-dhawan-e6jmack2h74liho1.jpg",
-      alt: "Image 3",
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEh7n7Ah2N_K2AAdyfR1xX3qIKuYJspcmozJ5msN1S9J0CLcZ-g0D5K4nQHejCpZ_R7sNcaJV20dzIQRtwE_DJJpPoMG5zgC2cB0yKtDiCjXko9pd2NXgb2JF-ttbo7JGi2effUPYasaekKR9AvjNgemuZCqJgjbYxdD606067SWERcUrltwAJqwq4AsAaw",
+      alt: "Pawai",
     },
     {
       id: 4,
-      src: "https://i.pinimg.com/originals/4f/0f/50/4f0f50f7637c7785441267c51adf03f8.jpg",
-      alt: "Image 4",
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEjQYL6RUuWYvU1lpiDfduI6kokRwXxFMy9MizW6xwVSavDYvkIx2rgG9QI0FJjs1tyZgzrDlj_6AEh1XY6_NbmxVzwATzQUFTURUW0hOFsy0v-VHswyku4Xl7zH8-KgC7TcyGtbLvHPjiGmhAWTppqH5LTzpKNoUMiQURhRwqXlQ679Mhpc2TQGv5Clo50",
+      alt: "JBP",
     },
     {
       id: 5,
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrVKzGc-yxpo_fGrZ-NUKeb1RJCPaW_rV5cw&s",
-      alt: "Image 5",
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEiZnXIekXdKDGe5erNjsk5zPphP56Np_No7db_z8tuTIUjASLIUyRVxg27Mr1haxHOcGE_pbXtg5uDWFIqPs4d0N4eHinG_3xvX-rc4H69dHDdeotKMqYpEuq3eYWCFBKri5PXXCHuzfRrY2q3x1pP5OWGCSU-P1O34EZtulEe4Aum0uvSNyhHrh9-bgGo",
+      alt: "Office",
     },
     {
       id: 6,
@@ -237,7 +237,7 @@ const Gallery = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="w-full object-contain h-48 sm:h-56 md:h-64  transition-transform duration-500 group-hover:scale-105"
                 />
               </motion.div>
             </motion.div>

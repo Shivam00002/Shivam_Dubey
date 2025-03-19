@@ -383,7 +383,7 @@ const Hero = () => {
             >
               <motion.img
                 className="w-full h-full object-cover"
-                src="/api/placeholder/400/400"
+                src="https://blogger.googleusercontent.com/img/a/AVvXsEhHNu85ye8eXDVf4X-oVe7TDvxgehvXlvmdaDPaL6kNo9-lixLrVURTVf1fPW4voeKsvuOiYSrs95TBVJkvjRFXVz7HN7e_pkatXD59Oo83VdDwZ3FYSQVxmxc6nbYX4ro78LIazr5LChu0UbNKhPu9wpg-ZLLS-aWdJv44_DGrZKMfjGMtmK70Rt2i1Bo"
                 alt="Shivam Dubey"
                 whileHover={{ scale: 1.05 }}
               />

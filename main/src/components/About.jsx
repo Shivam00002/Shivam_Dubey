@@ -240,7 +240,7 @@ const About = () => {
                       </svg>
                     ),
                     label: "Height",
-                    value: "5'9\"",
+                    value: "5'10\"",
                   },
                   {
                     icon: (

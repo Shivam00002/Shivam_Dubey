@@ -7,25 +7,16 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
+
+      {
+      id: 0,
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEg13588wtdLzJY4EOinCiuQRBnwpEFGyghRZz-3wE1FCZlbnJXvWgees0To-bQaNe-3sGZA_A2Pfsd5mavgN6qfGtp2DPSgkYfIgehRNAoL0G5dvGfUWDCU1cHt6u-ob3zs1yeMLR4gSuaXlGhethv47sbBFFq49SRPpsrcTU98_d2Jucw3KSCKD9mrMhg",
+      alt: "",
+    },
     {
       id: 1,
       src: "https://blogger.googleusercontent.com/img/a/AVvXsEhiAC_-AyXcXcq--5lqHZ6BUYt7RDu4VCNRnabbcoIlW4PwWwV1yvTIcVxmwcowOq5MRjl9J9Ar3SqI6_j1BeNHkfbCeKZMXEqxD6A-OeF3S44R6ABChuu7GqTt_jnNKT9s7mySQL17r_UkIT9DCWVgUIK8Y3RD6fee5ceX2kbZ5Rqc37QYe9Z_5u3YMqg",
       alt: "Ujjain feb 2025",
-    },
-    {
-      id: 2,
-      src: "https://blogger.googleusercontent.com/img/a/AVvXsEioVqwFwwqJnGM0KpgiB4iPCwt-VHI3-mv6FFhBX5QaPsdSn5fnwFUsPJVqp6fTTmOmsApKvKWaVidUjkqGYNUWHDf9qanx0hQPae-ckL6zONFh677AaLbjwG4geTLr0jvtTn3hNmFxzN49DkzcJNCbcuSUrgGaUgvu7UpaCZuTsCYndQ1yzPKvFLVdt48",
-      alt: "Bheraghat",
-    },
-    {
-      id: 3,
-      src: "https://blogger.googleusercontent.com/img/a/AVvXsEh7n7Ah2N_K2AAdyfR1xX3qIKuYJspcmozJ5msN1S9J0CLcZ-g0D5K4nQHejCpZ_R7sNcaJV20dzIQRtwE_DJJpPoMG5zgC2cB0yKtDiCjXko9pd2NXgb2JF-ttbo7JGi2effUPYasaekKR9AvjNgemuZCqJgjbYxdD606067SWERcUrltwAJqwq4AsAaw",
-      alt: "Pawai",
-    },
-    {
-      id: 4,
-      src: "https://blogger.googleusercontent.com/img/a/AVvXsEjQYL6RUuWYvU1lpiDfduI6kokRwXxFMy9MizW6xwVSavDYvkIx2rgG9QI0FJjs1tyZgzrDlj_6AEh1XY6_NbmxVzwATzQUFTURUW0hOFsy0v-VHswyku4Xl7zH8-KgC7TcyGtbLvHPjiGmhAWTppqH5LTzpKNoUMiQURhRwqXlQ679Mhpc2TQGv5Clo50",
-      alt: "JBP",
     },
     {
       id: 5,
@@ -34,18 +25,8 @@ const Gallery = () => {
     },
     {
       id: 6,
-      src: "https://blogger.googleusercontent.com/img/a/AVvXsEiUG_o30P3vtad2zReBA2LMS9bEibHW_E6urYwHNIi6EIajonRFI20Xkufub1rWsmEFZ5JkvYd9jZa-scwhi3pG8iVaUKT0d_U0_n7PkO01_QKysQIY_Ru4kanso5BKSBLacY6t41Dbk7sGzYiuAqzLMM5wiI4t-5mGEB795u2NogucvdaiGFpZt3LB7w8",
-      alt: "Madan Mahal Fort",
-    },
-    {
-      id: 7,
-      src: "https://blogger.googleusercontent.com/img/a/AVvXsEgAfKSdsRVEtgugkLcSXOxMSF6o05z-I2V4Iswsp2Q5P0t4uoIEfaDaKbD8c3lQ8EKShkphLph8Z-UCQnNfPnZjMHqhVWkRcW8H04u4RxYoTjIFKwHv0sh5Xl-MA2XTHRC5U-n3vyH3mSTDsbdqSQoEq4dY_8zEUuGeHUwmMYWWAdXtiU-JdUztPjVjzzQ",
-      alt: "🤩",
-    },
-    {
-      id: 8,
-      src: "https://blogger.googleusercontent.com/img/a/AVvXsEjxMQyV8HWDy8i2fbDfH1Zba25lqFpCz0MEhIWKUS0o6vK9TS5UCc5ZpzV1j9Mz8BlD5dWXn3xGqjqZvQxKucHsMV7vxGBcv52O3NTWd2uIrqIF0tr6jWkM9d9WYxHmoUPFQDJCtBL1f0DcsdYcqQ0YWRkRJ7kJyQhLuwtJakHx9FsCZUg48_GYcye8sf8",
-      alt: "✌🏼",
+      src: "https://blogger.googleusercontent.com/img/a/AVvXsEgo_3idyPZVvTQjkHMZ8tEg_bxWsKKkpnIHTJl62L92mPRUMKcCuRhU05dXLQ6m3_BsBXOOYzPB2TSkq-pjlPgapv3wSy_l6p3WsZslb0SqCBRbjPziou437KaW4_X7mXdyQQemmoNOl6d8tHbsSM59vu0Nt7eImGmFJifNuoGrmXG92nxis9tQnCFw2Ks",
+      alt: "",
     },
   ];
 
@@ -239,15 +220,10 @@ const Gallery = () => {
               onClick={() => setSelectedImage(image)}
             >
               <motion.div className="relative group" variants={imageHover}>
-                <motion.div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-                  <p className="text-white font-medium text-center text-sm sm:text-base">
-                    {image.alt}
-                  </p>
-                </motion.div>
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full object-contain h-48 sm:h-56 md:h-64  transition-transform duration-500 group-hover:scale-105"
+                  className="w-full object-contain h-48 sm:h-56 md:h-64 transition-transform duration-500 group-hover:scale-105"
                 />
               </motion.div>
             </motion.div>
@@ -298,16 +274,7 @@ const Gallery = () => {
                     ></path>
                   </svg>
                 </motion.button>
-                <div className="absolute bottom-4 left-0 right-0 text-center">
-                  <motion.div
-                    className="inline-block bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-black shadow-lg text-sm sm:text-base"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    {selectedImage.alt}
-                  </motion.div>
-                </div>
+
               </motion.div>
             </motion.div>
           )}

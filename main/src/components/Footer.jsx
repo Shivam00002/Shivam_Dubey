@@ -16,7 +16,7 @@ const Footer = () => {
         </p>
         <div className="flex justify-center space-x-4 mt-3 sm:mt-4">
           <a
-            href="#"
+            href="https://www.instagram.com/_shivam._.dubey/profilecard/?igsh=OGJza2pnb2cyY25q"
             className="hover:text-indigo-400 transition-colors duration-300"
             aria-label="Instagram"
           >

@@ -387,6 +387,7 @@ const Hero = () => {
                 alt="Shivam Dubey"
                 whileHover={{ scale: 1.05 }}
               />
+              
             </motion.div>
           </motion.div>
         </motion.div>

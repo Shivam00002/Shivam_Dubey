@@ -10,6 +10,7 @@ const Footer = () => {
         !darkMode ? "bg-white text-gray-800" : "bg-gray-900 text-white "
       } py-6 sm:py-8`}
     >
+      
       <div className="container mx-auto px-4 text-center">
         <p className="mb-2 text-sm sm:text-base">
           &copy; {new Date().getFullYear()} Shivam Dubey. All rights reserved.

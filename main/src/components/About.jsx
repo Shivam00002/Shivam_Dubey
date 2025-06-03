@@ -459,6 +459,7 @@ const About = () => {
                       "React",
                       "Next.js",
                       "JavaScript",
+                      "TypeScript",
                       "Node.js",
                       "MongoDB",
                       "Express",

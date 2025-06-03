@@ -82,6 +82,15 @@ const About = () => {
     hover: { scale: 1.1, transition: { duration: 0.2 } },
   };
 
+  const bioVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
   return (
     <motion.section
       className={`py-12 md:py-16 ${
@@ -112,11 +121,72 @@ const About = () => {
           ></motion.div>
         </motion.div>
 
-        <div
-          className={`rounded-xl  p-4 sm:p-6 md:p-8 ${
+        {/* Bio Section */}
+        <motion.div
+          className={`rounded-xl p-4 sm:p-6 md:p-8 mb-8 ${
             darkMode
               ? "bg-gray-800 border border-gray-700"
-              : "bg- border border-gray-200"
+              : "bg-white border border-gray-200"
+          }`}
+          variants={bioVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          whileHover={cardHover}
+        >
+          <div className="text-center">
+            <motion.div
+              className={`inline-flex items-center justify-center p-3 ${
+                darkMode ? "bg-gradient-to-r from-indigo-800 to-purple-800" : "bg-gradient-to-r from-indigo-100 to-purple-100"
+              } rounded-full mb-4`}
+              variants={iconAnimation}
+              whileHover="hover"
+            >
+              <svg
+                className={`w-6 h-6 ${
+                  darkMode ? "text-indigo-300" : "text-indigo-600"
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                ></path>
+              </svg>
+            </motion.div>
+            <h3
+              className={`text-xl md:text-2xl font-bold mb-4 ${
+                darkMode ? "text-white" : "text-gray-800"
+              }`}
+            >
+              Hey There! I'm Shivam Dubey 👋
+            </h3>
+            <p
+              className={`text-base md:text-lg leading-relaxed ${
+                darkMode ? "text-gray-300" : "text-gray-700"
+              } max-w-4xl mx-auto`}
+            >
+              A passionate <span className={`font-semibold ${darkMode ? "text-indigo-300" : "text-indigo-600"}`}>full stack engineer</span> based in India with{" "}
+              <span className={`font-semibold ${darkMode ? "text-purple-300" : "text-purple-600"}`}>2.5 years of experience</span> building modern web applications. 
+              I specialize in creating seamless end-to-end solutions using cutting-edge technologies like{" "}
+              <span className={`font-semibold ${darkMode ? "text-indigo-300" : "text-indigo-600"}`}>React, Next.js, TypeScript, Node.js, and Express</span>. 
+              My expertise spans the entire development pipeline - from crafting intuitive user interfaces to building scalable backend services. 
+              I'm passionate about writing clean, maintainable code and delivering solutions that exceed expectations. 
+              Always eager to learn new technologies and collaborate with talented teams to create impactful digital experiences. 🚀
+            </p>
+          </div>
+        </motion.div>
+
+        <div
+          className={`rounded-xl p-4 sm:p-6 md:p-8 ${
+            darkMode
+              ? "bg-gray-800 border border-gray-700"
+              : "bg-white border border-gray-200"
           }`}
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -182,86 +252,6 @@ const About = () => {
                     label: "Birth Details",
                     value: "7th September, 1999 at 4:40 AM",
                   },
-                  // {
-                  //   icon: (
-                  //     <svg
-                  //       className="w-5 h-5 text-indigo-500 dark:text-indigo-300"
-                  //       fill="none"
-                  //       stroke="currentColor"
-                  //       viewBox="0 0 24 24"
-                  //       xmlns="http://www.w3.org/2000/svg"
-                  //     >
-                  //       <path
-                  //         strokeLinecap="round"
-                  //         strokeLinejoin="round"
-                  //         strokeWidth="2"
-                  //         d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  //       ></path>
-                  //     </svg>
-                  //   ),
-                  //   label: "Gotra",
-                  //   value: "Bharadwaj",
-                  // },
-                  // {
-                  //   icon: (
-                  //     <svg
-                  //       className="w-5 h-5 text-indigo-500 dark:text-indigo-300"
-                  //       fill="none"
-                  //       stroke="currentColor"
-                  //       viewBox="0 0 24 24"
-                  //       xmlns="http://www.w3.org/2000/svg"
-                  //     >
-                  //       <path
-                  //         strokeLinecap="round"
-                  //         strokeLinejoin="round"
-                  //         strokeWidth="2"
-                  //         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  //       ></path>
-                  //     </svg>
-                  //   ),
-                  //   label: "Age",
-                  //   value: "25 years",
-                  // },
-                  // {
-                  //   icon: (
-                  //     <svg
-                  //       className="w-5 h-5 text-indigo-500 dark:text-indigo-300"
-                  //       fill="none"
-                  //       stroke="currentColor"
-                  //       viewBox="0 0 24 24"
-                  //       xmlns="http://www.w3.org/2000/svg"
-                  //     >
-                  //       <path
-                  //         strokeLinecap="round"
-                  //         strokeLinejoin="round"
-                  //         strokeWidth="2"
-                  //         d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                  //       ></path>
-                  //     </svg>
-                  //   ),
-                  //   label: "Height",
-                  //   value: "5'10\"",
-                  // },
-                  // {
-                  //   icon: (
-                  //     <svg
-                  //       className="w-5 h-5 text-indigo-500 dark:text-indigo-300"
-                  //       fill="none"
-                  //       stroke="currentColor"
-                  //       viewBox="0 0 24 24"
-                  //       xmlns="http://www.w3.org/2000/svg"
-                  //     >
-                  //       <path
-                  //         strokeLinecap="round"
-                  //         strokeLinejoin="round"
-                  //         strokeWidth="2"
-                  //         d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                  //       ></path>
-                  //     </svg>
-                  //   ),
-                  //   label: "Complexion",
-                  //   value: "Fair",
-                  // },
                 ].map((item, index) => (
                   <motion.div
                     key={index}
@@ -297,7 +287,7 @@ const About = () => {
               </div>
             </motion.div>
 
-     
+            {/* Right Column - animates from right */}
             <motion.div
               variants={rightColumnVariants}
               initial="hidden"
@@ -374,7 +364,7 @@ const About = () => {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth="2"
-                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                         ></path>
                       </svg>
                     ),
@@ -464,7 +454,6 @@ const About = () => {
                       "MongoDB",
                       "Express",
                       "Tailwind",
-                 
                     ].map((skill, i) => (
                       <motion.span
                         key={i}
